@@ -10,9 +10,9 @@ namespace QA_Framework.Pages
 {
     public class BasePage : TestBase
     {
-       // protected IWebDriver driver;
-        public BasePage(IWebDriver driver) 
-        {
+        // protected IWebDriver driver;
+        //public BasePage(IWebDriver driver) : base(driver) { }
+        public BasePage(IWebDriver driver){
             this.driver = driver;
         }
 

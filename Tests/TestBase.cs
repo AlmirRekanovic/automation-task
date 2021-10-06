@@ -13,15 +13,15 @@ namespace QA_Framework.Tests
 {
     public class TestBase
     {
-        protected static IWebDriver driver;
+        protected IWebDriver driver;
 
         [SetUp]
         public void Setup() 
         {
-            driver = new DriverManager("chrome").CreateDriver();
+            DriverManager driverManager = new DriverManager("chrome");
+            driver = driverManager.CreateDriver();
             driver.Manage().Window.Maximize();
-            driver.Navigate().GoToUrl("http://automationpractice.com");
-
+            driver.Navigate().GoToUrl("https://sports.williamhill.com/betting/en-gb");
         }
 
         [TearDown]

@@ -58,7 +58,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Web Drier\DriverManager.cs" />
+    <Compile Include="Tests\Class1.cs" />
+    <Compile Include="Web Driver\DriverManager.cs" />
     <Compile Include="Helpers\DirectoryHandler.cs" />
     <Compile Include="Helpers\ElementExtension.cs" />
     <Compile Include="Helpers\FileHandler.cs" />
@@ -71,7 +72,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Pages\Implementation\RegistrationPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Web Drier\DriverOptionsCreator.cs" />
+    <Compile Include="Web Driver\DriverOptionsCreator.cs" />
     <Compile Include="Tests\TestBase.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -15,18 +15,18 @@ namespace QA_Framework.Pages.Implementation
         private IWebElement SignOutButton => driver.FindElement(By.ClassName("logout"));
         public MyAccountPage(IWebDriver driver) : base(driver) { }
 
-        public HomePage GoToHomePage() 
-        {
-            HomeButton.Click();
-            return new HomePage(driver);
-        }
+    //    public HomePage GoToHomePage() 
+    //    {
+    //        HomeButton.Click();
+    //        return new HomePage(driver);
+    //    }
 
-        public MyAccountPage IsUserLoggedIn() 
-        {
-            ElementExtension.UntilVisible(By.CssSelector("a[title='Home']"), driver);
+    //    public MyAccountPage IsUserLoggedIn() 
+    //    {
+    //        ElementExtension.UntilVisible(By.CssSelector("a[title='Home']"), driver);
 
-            Assert.True(HomeButton.Displayed);
-            return new MyAccountPage(driver);
-        }
+    //        Assert.True(HomeButton.Displayed);
+    //        return new MyAccountPage(driver);
+    //    }
     }
 }
