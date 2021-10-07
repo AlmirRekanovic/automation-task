@@ -13,8 +13,8 @@ namespace QA_Framework.Pages.Implementation
     {
         private IWebElement JoinButton => ElementExtension.UntilVisible(By.XPath("//button[@data-test-id='@sitebase/registration-button_pi-header__registration-button']"),driver);
         private IWebElement SignInButtonTranslation(string translation) => ElementExtension.UntilVisible(By.XPath($"//span[text()='{translation}']"),driver);
-        private IWebElement SearchInputField => driver.FindElement(By.Id("search_query_top"));
-        private IWebElement SearchButton => driver.FindElement(By.Name("submit_search"));
+        private IWebElement CookiePopup => ElementExtension.UntilVisible(By.ClassName("cookie-disclaimer"),driver);
+        private IWebElement AcceptCookiesButton => ElementExtension.UntilVisible(By.ClassName("cookie-disclaimer__button"),driver);
         private IWebElement LanguageDropDownMenu(string country) => ElementExtension.UntilVisible(By.XPath($"//span[text()='{country}']"),driver);
         private IWebElement LanguageSelector(string language) => ElementExtension.UntilVisible(By.XPath($"//span[text()='{language}']"),driver);
 
@@ -44,6 +44,23 @@ namespace QA_Framework.Pages.Implementation
         public void VerifyThatJoinButtonIsTranslated(string translation)
         {
             Assert.True(SignInButtonTranslation(translation).Displayed);
+        }
+
+        public void AcceptCookies()
+        {
+            AcceptCookiesButton.Click();
+        }
+
+        public void VerifyThatAcceptCookiePopUpIsDisplayed()
+        {
+                Assert.True(CookiePopup.Displayed);
+            
+        }
+
+        public void VerifyThatAcceptCookiePopUpIsnotDisplayed()
+        {
+                Assert.True(CookiePopup.Displayed);
+
         }
     }
 }
