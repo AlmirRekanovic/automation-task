@@ -23,10 +23,13 @@ namespace QA_Framework.Tests
             actions.Perform();
             HomePage homePage = new HomePage(driver);
             homePage.AcceptCookies();
-            ElementExtension.UntilVisible(By.XPath("//a[contains(text(),'New')]"), driver).Click();
+            ElementExtension.UntilVisible(By.XPath("//a[contains(text(),'New')]"), driver).Click(); 
+            //ElementExtension.UntilVisible(By.XPath(" //a[contains(text(),'Live Game Shows')]"), driver).Click();
             var popular = ElementExtension.UntilVisible(By.ClassName("whgg-tile-grid"),driver).FindElements(By.TagName("li"));
+            //var live = driver.FindElements(By.XPath("//*[@id='app']/div/div/div[1]/div[4]/div/div[1]/div[2]/div/div[2]/section/section/div/div[2]/div/section/div/div/div")); //.FindElements(By.XPath("//div[@class='sc-fAjcbJ eLITSG']"));
+            //Console.WriteLine(live.Count);
             Console.WriteLine(popular.Count);
-            Console.Write(popular.ToString());
+            //Console.Write(popular.ToString());
         }
     }
 }
